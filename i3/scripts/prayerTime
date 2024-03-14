@@ -1,0 +1,2 @@
+#!/bin/bash
+firefox -new-window "https://timesprayer.com/prayer-times-in-al-bitash-sharq.html" &

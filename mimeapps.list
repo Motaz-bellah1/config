@@ -1,0 +1,31 @@
+[Added Associations]
+application/pdf=org.pwmt.zathura.desktop;
+application/x-compressed-tar=file-roller.desktop;
+application/x-zerosize=nvim.desktop;
+application/xhtml+xml=firefox.desktop;
+audio/mpeg=mpv.desktop;
+audio/vnd.wave=mpv.desktop;
+image/gif=nsxiv-5.desktop;
+image/jpeg=nsxiv-2.desktop;
+image/png=nsxiv.desktop;
+image/webp=nsxiv-3.desktop;
+inode/directory=mpv.desktop;nsxiv-4.desktop;
+text/plain=nvim.desktop;firefox.desktop;nvim-3.desktop;nvim-2.desktop;
+video/mpeg=mpv.desktop;
+
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop;
+application/x-compressed-tar=file-roller.desktop;
+application/x-zerosize=nvim.desktop;
+application/xhtml+xml=firefox.desktop;
+audio/mpeg=mpv.desktop;
+audio/vnd.wave=mpv.desktop;
+image/gif=nsxiv-5.desktop;
+image/jpeg=nsxiv-2.desktop;
+image/png=nsxiv.desktop;
+image/webp=nsxiv-3.desktop;
+inode/directory=mpv.desktop;
+nsxiv-2.desktop=file-roller.desktop
+text/plain=nvim.desktop;
+video/mpeg=mpv.desktop;
+x-scheme-handler/nc=com.nextcloud.desktopclient.nextcloud.desktop

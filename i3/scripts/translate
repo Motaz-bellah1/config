@@ -1,0 +1,4 @@
+#!/bin/sh
+argos-translate-gui &
+sleep 1.5s; xdotool mousemove 700 500
+xdotool click 1 

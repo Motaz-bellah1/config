@@ -1,0 +1,2 @@
+#!/bin/sh
+date '+%Y-%m-%d %I:%M:%S' | sed -z "s/\n/ /g" && idate --umm_alqura | rg Output | rg --regexp="\d?\d/\d? ?\d/\d\d\d\d" --only-matching

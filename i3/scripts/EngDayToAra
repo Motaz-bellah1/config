@@ -1,0 +1,18 @@
+#!/bin/sh
+TODAY=$(date '+%A')
+
+if [[ $TODAY == "Saturday" ]]; then
+	echo "السبت"
+elif [[ $TODAY == "Sunday" ]]; then
+	echo "الأحد"
+elif [[ $TODAY == "Monday" ]]; then
+	echo "الإثنين"
+elif [[ $TODAY == "Tuesday" ]]; then
+	echo "الثلاثاء"
+elif [[ $TODAY == "Wednesday" ]]; then
+	echo "الأربعاء"
+elif [[ $TODAY == "Thursday" ]]; then
+	echo "الخميس"
+else
+	echo "الجمعة"
+fi

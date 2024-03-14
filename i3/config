@@ -1,0 +1,229 @@
+# Mod key
+set $mod Mod4
+
+# Font
+font pango:Font Awesome bold 9
+
+# Applacations and macros
+bindsym $mod+b		exec --no-startup-id "dolphin"
+bindsym $mod+Return exec --no-startup-id "alacritty"
+bindsym $mod+d      exec --no-startup-id "dmenu_run"
+bindsym $mod+w      exec --no-startup-id "$HOME/.config/i3/scripts/whatsapp"
+bindsym $mod+shift+w      exec --no-startup-id "telegram-desktop"
+bindsym $mod+z exec --no-startup-id "nsxiv -f /mnt/data/Pictures/يومي"
+bindsym Shift+Print exec "$HOME/.config/i3/scripts/torbrowser"
+
+# Macros
+bindsym XF86Explorer   exec --no-startup-id "alacritty --class=Bashtop -e bashtop"
+bindsym XF86Search     exec --no-startup-id "mpv --player-operation-mode=pseudo-gui"
+bindsym XF86Calculator exec --no-startup-id "qalculate-gtk"
+bindsym XF86Tools	   exec --no-startup-id "/home/mizoman/.config/i3/scripts/prayerTime"
+bindsym Print          exec --no-startup-id "firefox"
+bindsym Scroll_Lock    exec --no-startup-id "$HOME/.config/i3/scripts/translate"
+bindsym Pause          exec --no-startup-id "__NV_PRIME_RENDER_OFFLOAD=1 focalboard-bin"
+
+
+# Movement
+set $up k
+set $down j
+set $left h
+set $right l
+
+# use Mouse+mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# move focused window
+bindsym $mod+Shift+$left move left 
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Workspace control and setup
+# enter fullscreen $mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# kill focused window
+bindsym $mod+q kill
+
+# change layout (stacked, tabbed, split)
+bindsym $mod+s layout toggle
+
+# toggle split with t
+bindsym $mod+t split toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+s move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# Names for workspaces 
+set $ws1 "1"
+set $ws2 "10"
+set $ws3 "11"
+set $ws4 "100"
+set $ws5 "101"
+set $ws6 "110"
+set $ws7 "111"
+set $ws8 "1000"
+set $ws9 "1001"
+set $ws10 "1010"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# With super
+bindsym $mod+comma workspace prev
+bindsym $mod+period  workspace next
+bindsym $mod+slash workspace back_and_forth
+bindsym $mod+Shift+comma move container to workspace prev
+bindsym $mod+Shift+period exec --no-startup-id i3-msg move window to workspace number $($HOME/.config/i3/scripts/i3Next.py)
+#  with Alt
+bindsym Mod1+comma workspace prev
+bindsym Mod1+period  workspace next
+bindsym Mod1+slash workspace back_and_forth
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Windows rules
+for_window [class="^.*"] border pixel 1
+for_window [class="Qalculate-gtk"] floating enable
+for_window [class="Tor Browser"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [title="Argos Translate"] floating enable, resize set 960 475, move window to position 445 355
+for_window [class="Bashtop"   instance="Bashtop"] floating enable, resize set 1720 880, move window to position 105 80
+for_window [class="SimpleScreenRecorder"] floating enable
+
+# Modes
+# resize window
+mode "resize" {
+        bindsym $left       resize shrink width 5 px or 5 ppt
+        bindsym $down       resize grow height 5 px or 5 ppt
+        bindsym $up         resize shrink height 5 px or 5 ppt
+        bindsym $right      resize grow width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Shutdown, reboot, lock screen
+set $mode_system System (l) lock, (e) exit i3, (s) suspend, (h) hibernate, (r) reboot
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $HOME/.config/i3/scripts/i3exit.sh lock, mode "default"
+    bindsym e exec --no-startup-id $HOME/.config/i3/scripts/i3exit.sh exit_i3, mode "default"
+    bindsym s exec --no-startup-id $HOME/.config/i3/scripts/i3exit.sh suspend, mode "default"
+    bindsym h exec --no-startup-id $HOME/.config/i3/scripts/i3exit.sh hibernate, mode "default"
+    bindsym r exec --no-startup-id $HOME/.config/i3/scripts/i3exit.sh reboot, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode "$mode_system"
+bindsym $mod+x exec --no-startup-id "$HOME/.config/i3/scripts/prompt"
+
+# i3 config control
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c reload
+
+## Volume control
+# Path to volume control, without trailing slash
+set $volumepath /home/mizoman/.config/i3/scripts
+
+# Command for the status line
+#   ie: i3blocks, i3status
+set $statuscmd i3blocks
+
+# Signal used to update the status line
+#   i3blocks uses SIGRTMIN+10 by default
+#   i3status uses SIGUSR1 by default
+set $statussig SIGRTMIN+10
+
+# Amount to increase/decrease volume as a percentage
+set $volumestep 5
+
+# pulseaudio-utils settings
+set $sinkname alsa_input.pci-0000_00_1b.0.analog-stereo.mointor
+
+# Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
+bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig -N herbe  up $volumestep
+bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig -N herbe down $volumestep
+bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig -N herbe mute
+
+#i3blocks and windows
+set $bg-color #2f343f
+set $inactive-bg-color #2f343f
+set $text-color #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color #E53935
+set $indicator #285577
+
+# client.focused           $bg-color          $bg-color          $text-color          $indicator
+# client.unfocused         $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator
+# client.focused_inactive  $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator
+# client.urgent            $urgent-bg-color   $urgent-bg-color   $text-color          $indicator
+
+bar {
+		position top
+        status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+		colors {
+					background $bg-color
+					separator #757575
+					# border background text
+					focused_workspace $bg-color $bg-color $text-color
+					inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+					urgent_workspace $urgent-bg-color $urgent-bg-color $text-color
+					}
+}
+
+# Autostart
+exec_always			 setxkbmap -layout us,ara; setxkbmap -option 'grp:alt_shift_toggle'
+exec --no-startup-id xrandr --dpi 100 
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xsetroot -cursor_name left_ptr
+exec --no-startup-id lxpolkit
+exec --no-startup-id nm-applet
+exec --no-startup-id xcompmgr
+exec --no-startup-id /usr/lib/notification-daemon-1.0/notification-daemon 
+exec --no-startup-id $HOME/.config/i3/scripts/randomNum 1 117 | xargs -I {} feh --no-fehbg --bg-scale /mnt/data/Pictures/Wallpapers/wallpaper{}.jpg
+exec --no-startup-id /home/mizoman/.local/bin/quran_1h
+exec --no-startup-id $HOME/.config/i3/scripts/ytClip.sh
+exec --no-startup-id i3-msg restart
+exec --no-startup-id mpv --audio-display=no --volume=80 /mnt/data/Quran/al-kursy.mp3

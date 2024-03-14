@@ -1,0 +1,22 @@
+[ExtractDialog]
+DirHistory[$e]=$HOME/,/run/media/mizoman/_㢪/ratotalie/
+
+[General]
+LockSidebar=true
+ShowSidebar=true
+ShowWelcomeScreenOnStartup=true
+
+[KFileDialog Settings]
+Recent Files[$e]=.cache,file:$HOME/.cache
+Recent URLs[$e]=file:$HOME/
+detailViewIconSize=16
+
+[MainWindow]
+1920x1080 screen: Height=1054
+1920x1080 screen: Width=1918
+1920x1080 screen: XPosition=1
+1920x1080 screen: YPosition=25
+DVI-I-1=DVI-I-1
+State=AAAA/wAAAAD9AAAAAQAAAAEAAAEIAAAD/fwCAAAAAfsAAAAWAGEAcgBrAF8AcwBpAGQAZQBiAGEAcgEAAAAhAAAD/QAAAOQA///+AAAGcAAAA/0AAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+StatusBar=Disabled
+ToolBarsMovable=Disabled

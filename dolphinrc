@@ -1,0 +1,53 @@
+MenuBar=Disabled
+
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display
+
+[Baloo KEditCommentDialog]
+1920x1080 screen: Height=249
+1920x1080 screen: Width=278
+
+[Colors:View]
+BackgroundNormal=#31363B
+
+[CompactMode]
+MaximumTextWidthIndex=3
+PreviewSize=64
+
+[DetailsMode]
+PreviewSize=64
+
+[General]
+RememberOpenedTabs=false
+ShowFullPath=true
+SortingChoice=CaseInsensitiveSorting
+Version=202
+ViewPropsTimestamp=2023,5,4,9,18,34.354
+
+[IconsMode]
+MaximumTextLines=5
+PreviewSize=224
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[KPropertiesDialog]
+1360x768 screen: Height=624
+1360x768 screen: Width=469
+1920x1080 screen: Height=480
+1920x1080 screen: Width=567
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
+
+[Shortcut Schemes]
+Current Scheme=Default
+
+[ViewPropertiesDialog]
+1920x1080 screen: Height=611
+1920x1080 screen: Width=468

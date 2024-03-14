@@ -1,0 +1,4 @@
+#!/bin/sh
+whatsie &
+sleep 10s
+rm -r ~/.pki

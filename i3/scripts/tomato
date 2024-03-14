@@ -1,0 +1,2 @@
+#!/bin/sh
+tomato -t && echo ""

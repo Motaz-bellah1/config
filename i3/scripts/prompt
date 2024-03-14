@@ -1,0 +1,2 @@
+#!/bin/bash
+[ $(echo -e "Yes\nNo" | dmenu -i -p "Shutdown :" ) == "Yes" ] && shutdown now
