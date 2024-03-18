@@ -8,10 +8,6 @@ font pango:Font Awesome bold 9
 bindsym $mod+b		exec --no-startup-id "dolphin"
 bindsym $mod+Return exec --no-startup-id "alacritty"
 bindsym $mod+d      exec --no-startup-id "dmenu_run"
-bindsym $mod+w      exec --no-startup-id "$HOME/.config/i3/scripts/whatsapp"
-bindsym $mod+shift+w      exec --no-startup-id "telegram-desktop"
-bindsym $mod+z exec --no-startup-id "nsxiv -f /mnt/data/Pictures/يومي"
-bindsym Shift+Print exec "$HOME/.config/i3/scripts/torbrowser"
 
 # Macros
 bindsym XF86Explorer   exec --no-startup-id "alacritty --class=Bashtop -e bashtop"
@@ -223,7 +219,4 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xcompmgr
 exec --no-startup-id /usr/lib/notification-daemon-1.0/notification-daemon 
 exec --no-startup-id $HOME/.config/i3/scripts/randomNum 1 117 | xargs -I {} feh --no-fehbg --bg-scale /mnt/data/Pictures/Wallpapers/wallpaper{}.jpg
-exec --no-startup-id /home/mizoman/.local/bin/quran_1h
-exec --no-startup-id $HOME/.config/i3/scripts/ytClip.sh
 exec --no-startup-id i3-msg restart
-exec --no-startup-id mpv --audio-display=no --volume=80 /mnt/data/Quran/al-kursy.mp3
